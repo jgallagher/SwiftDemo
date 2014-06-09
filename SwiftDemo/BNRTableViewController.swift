@@ -13,14 +13,10 @@ class BNRTableViewController: UITableViewController, BNRPersonStoreDelegate {
     
     var persons: Array<BNRPerson> = []
     var personStore: BNRPersonStore = BNRPersonStore()
-    
-    init(style: UITableViewStyle) {
-        super.init(nibName: nibName, bundle: nibBundle)
-    }
-    
-    convenience init(personStore: BNRPersonStore) {
-        self.init(style: UITableViewStyle.Grouped)
+
+    init(personStore: BNRPersonStore) {
         self.personStore = personStore
+        super.init(nibName: nibName, bundle: nibBundle)
         self.personStore.delegate = self
         persons = self.personStore.allPersons as Array
         navigationItem.title = "Persons"
