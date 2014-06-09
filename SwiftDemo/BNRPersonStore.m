@@ -21,7 +21,7 @@
 {
     self = [super init];
     if (self) {
-        _allPersons = persons;
+        _allPersons = [persons copy];
     }
     return self;
 }

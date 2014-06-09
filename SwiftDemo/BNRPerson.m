@@ -14,7 +14,7 @@
 {
     self = [super init];
     if (self) {
-        _name = name;
+        _name = [name copy];
         _age = age;
     }
     return self;
