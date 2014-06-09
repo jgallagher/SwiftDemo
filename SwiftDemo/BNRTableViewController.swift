@@ -35,6 +35,7 @@ class BNRTableViewController: UITableViewController, BNRPersonStoreDelegate {
         super.viewDidLoad()
         let nib = UINib(nibName: "BNRTableViewCell", bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "BNRTableViewCell")
+        tableView.rowHeight = 44;
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,10 +46,6 @@ class BNRTableViewController: UITableViewController, BNRPersonStoreDelegate {
 
     override func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
         return persons.count
-    }
-    
-    override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
-        return 44
     }
 
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell? {
