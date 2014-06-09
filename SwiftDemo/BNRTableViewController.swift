@@ -38,10 +38,6 @@ class BNRTableViewController: UITableViewController, BNRPersonStoreDelegate {
         tableView.rowHeight = 44;
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     // #pragma mark - Table view data source
 
     override func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
