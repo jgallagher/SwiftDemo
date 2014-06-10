@@ -35,7 +35,7 @@ class BNRTableViewController: UITableViewController, BNRPersonStoreDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let nib = UINib(nibName: "BNRTableViewCell", bundle: nil)
+        let nib = BNRTableViewCell.nibWithBundle(nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "BNRTableViewCell")
         tableView.rowHeight = 44;
     }

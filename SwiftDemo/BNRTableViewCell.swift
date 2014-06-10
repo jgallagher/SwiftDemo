@@ -13,4 +13,7 @@ class BNRTableViewCell: UITableViewCell {
     @IBOutlet var nameLabel: UILabel
     @IBOutlet var ageLabel: UILabel
 
+    class func nibWithBundle(bundle: NSBundle?) -> UINib {
+        return UINib(nibName: "BNRTableViewCell", bundle: bundle)
+    }
 }
