@@ -77,8 +77,8 @@ class BNRTableViewController: UITableViewController, BNRPersonStoreDelegate {
             selector: "respondToUpdateNotification",
             name: BNRPersonViewControllerDidUpdatePersonNotification,
             object: vc)
-        
-        self.navigationController.pushViewController(vc, animated: true)
+
+        self.showViewController(vc, sender: self)
     }
     
     // #pragma mark - Respond to person update notification
@@ -92,7 +92,7 @@ class BNRTableViewController: UITableViewController, BNRPersonStoreDelegate {
     func addNewPerson () {
         var person = BNRPerson(name: "", age: 0)
         var newPersonVC = BNRPersonViewController(person: person, personStore: personStore, newPerson: true)
-        navigationController.pushViewController(newPersonVC, animated: true)
+        self.showViewController(newPersonVC, sender: self)
     }
     
     // #pragma mark - Person store delegate
