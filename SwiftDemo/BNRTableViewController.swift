@@ -11,14 +11,16 @@ import Foundation
 
 class BNRTableViewController: UITableViewController, BNRPersonStoreDelegate {
     
-    var persons: Array<BNRPerson> = []
+    var persons: Array<BNRPerson>
     var personStore: BNRPersonStore
 
     init(personStore: BNRPersonStore) {
+        self.persons = personStore.allPersons as Array<BNRPerson>
         self.personStore = personStore
+
         super.init(nibName: nibName, bundle: nibBundle)
+
         self.personStore.delegate = self
-        persons = self.personStore.allPersons as Array
         navigationItem.title = "Persons"
         navigationItem.leftBarButtonItem = editButtonItem()
         let rbbi = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addNewPerson")
