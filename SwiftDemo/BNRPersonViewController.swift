@@ -14,15 +14,15 @@ class BNRPersonViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var ageTextField: UITextField
     @IBOutlet var topConstraint: NSLayoutConstraint
     let rbbi: UIBarButtonItem = UIBarButtonItem()
-    let person: BNRPerson = BNRPerson()
-    let personStore: BNRPersonStore = BNRPersonStore()
-    var newPerson: Bool = false
+    let person: BNRPerson
+    let personStore: BNRPersonStore
+    var newPerson: Bool
     
     init(person: BNRPerson, personStore: BNRPersonStore, newPerson: Bool) {
-        super.init(nibName: nibName, bundle: nibBundle)
         self.person = person
         self.personStore = personStore
         self.newPerson = newPerson
+        super.init(nibName: nibName, bundle: nibBundle)
         rbbi = UIBarButtonItem(title: "Save",
             style: UIBarButtonItemStyle.Bordered,
             target: self,
