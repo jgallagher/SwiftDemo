@@ -11,7 +11,7 @@
 
 @interface BNRPersonStore ()
 
-@property (nonatomic, copy, readwrite) NSArray *allPersons;
+@property (nonatomic) NSMutableArray *mutablePersons;
 
 @end
 
@@ -21,26 +21,25 @@
 {
     self = [super init];
     if (self) {
-        _allPersons = [persons copy];
+        _mutablePersons = [NSMutableArray arrayWithArray:persons];
     }
     return self;
 }
 
+- (NSArray *)allPersons
+{
+    return [self.mutablePersons copy];
+}
+
 - (void)addPerson:(BNRPerson *)person
 {
-    NSMutableArray *mutablePersons = [NSMutableArray arrayWithArray:self.allPersons];
-    [mutablePersons addObject:person];
-    self.allPersons = [mutablePersons copy];
+    [self.mutablePersons addObject:person];
     [self.delegate didAddPersonToPersonStore:self];
 }
 
 - (void)removePerson:(BNRPerson *)person
 {
-    NSMutableArray *mutablePersons = [NSMutableArray arrayWithArray:self.allPersons];
-    if ([mutablePersons containsObject:person]) {
-        [mutablePersons removeObject:person];
-    }
-    self.allPersons = [mutablePersons copy];
+    [self.mutablePersons removeObject:person];
 }
 
 @end
