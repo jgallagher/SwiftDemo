@@ -13,7 +13,7 @@ class BNRPersonViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var nameTextField: UITextField
     @IBOutlet var ageTextField: UITextField
     @IBOutlet var topConstraint: NSLayoutConstraint
-    let rbbi: UIBarButtonItem = UIBarButtonItem()
+    let rbbi: UIBarButtonItem!
     let person: BNRPerson
     let personStore: BNRPersonStore
     var newPerson: Bool
