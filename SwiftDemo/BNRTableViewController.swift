@@ -23,7 +23,7 @@ class BNRTableViewController: UITableViewController, BNRPersonStoreDelegate {
         self.personStore.delegate = self
         navigationItem.title = "Persons"
         navigationItem.leftBarButtonItem = editButtonItem()
-        let rbbi = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addNewPerson")
+        let rbbi = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addNewPerson")
         navigationItem.rightBarButtonItem = rbbi
     }
     
@@ -52,13 +52,13 @@ class BNRTableViewController: UITableViewController, BNRPersonStoreDelegate {
         let person = persons[indexPath!.row]
         cell.nameLabel.text = person.name
         cell.ageLabel.text = "\(person.age)"
-        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        cell.accessoryType = .DisclosureIndicator
 
         return cell
     }
     
     override func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
-        if editingStyle == UITableViewCellEditingStyle.Delete {
+        if editingStyle == .Delete {
             let person = persons[indexPath.row]
             personStore.removePerson(person)
             persons = personStore.allPersons as Array

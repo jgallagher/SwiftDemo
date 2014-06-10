@@ -24,7 +24,7 @@ class BNRPersonViewController: UIViewController, UITextFieldDelegate {
         self.newPerson = newPerson
         super.init(nibName: nibName, bundle: nibBundle)
         rbbi = UIBarButtonItem(title: "Save",
-            style: UIBarButtonItemStyle.Bordered,
+            style: .Bordered,
             target: self,
             action: "saveNewPerson")
         rbbi.enabled = false
