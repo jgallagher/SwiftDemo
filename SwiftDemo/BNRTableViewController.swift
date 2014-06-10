@@ -12,7 +12,7 @@ import Foundation
 class BNRTableViewController: UITableViewController, BNRPersonStoreDelegate {
     
     var persons: Array<BNRPerson> = []
-    var personStore: BNRPersonStore = BNRPersonStore()
+    var personStore: BNRPersonStore
 
     init(personStore: BNRPersonStore) {
         self.personStore = personStore
