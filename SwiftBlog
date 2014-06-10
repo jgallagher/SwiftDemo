@@ -1,3 +1,0 @@
-##Integrating Objective-C and Swift
-
-In last week's WWDC, Apple introduced an entirely new language for Mac and iOS development called Swift.  Swift is a modern language that is less verbose but equally expressive as Objective-C.  Furthermore, Swift offers a number of features not available in Objective-C.
