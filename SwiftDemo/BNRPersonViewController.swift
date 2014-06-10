@@ -8,6 +8,8 @@
 
 import UIKit
 
+let BNRPersonViewControllerDidUpdatePersonNotification = "BNRPersonViewControllerDidUpdatePersonNotification"
+
 class BNRPersonViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var nameTextField: UITextField
@@ -38,10 +40,6 @@ class BNRPersonViewController: UIViewController, UITextFieldDelegate {
         ageTextField.text = "\(person.age)"
     }
     
-    class func BNRPersonViewControllerDidUpdatePersonNotification () -> String {
-        return "BNRPersonViewControllerDidUpdatePersonNotification"
-    }
-    
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
         return textField.resignFirstResponder()
     }
@@ -61,7 +59,7 @@ class BNRPersonViewController: UIViewController, UITextFieldDelegate {
         if (newPerson) {
             personStore.addPerson(person)
         } else {
-            let notificationName = BNRPersonViewController.BNRPersonViewControllerDidUpdatePersonNotification()
+            let notificationName = BNRPersonViewControllerDidUpdatePersonNotification
             let notification = NSNotification(name: notificationName, object: self)
             NSNotificationCenter.defaultCenter().postNotification(notification)
         }

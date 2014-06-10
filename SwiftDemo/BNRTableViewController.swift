@@ -28,7 +28,7 @@ class BNRTableViewController: UITableViewController, BNRPersonStoreDelegate {
     }
     
     deinit {
-        let notificationName = BNRPersonViewController.BNRPersonViewControllerDidUpdatePersonNotification()
+        let notificationName = BNRPersonViewControllerDidUpdatePersonNotification
         let defaultCenter = NSNotificationCenter.defaultCenter()
         defaultCenter.removeObserver(self, name: notificationName, object: nil)
     }
@@ -74,9 +74,9 @@ class BNRTableViewController: UITableViewController, BNRPersonStoreDelegate {
         var defaultCenter = NSNotificationCenter.defaultCenter()
         
         defaultCenter.addObserver(self,
-        selector: "respondToUpdateNotification",
-        name: BNRPersonViewController.BNRPersonViewControllerDidUpdatePersonNotification(),
-        object: vc)
+            selector: "respondToUpdateNotification",
+            name: BNRPersonViewControllerDidUpdatePersonNotification,
+            object: vc)
         
         self.navigationController.pushViewController(vc, animated: true)
     }
